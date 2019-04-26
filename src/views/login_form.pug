@@ -1,0 +1,52 @@
+html
+html
+   head
+      title Form Tester
+      link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+      link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+      link(rel='stylesheet' href='css/style.css')
+      
+   body
+      // Material form login
+      .card.col-md-6
+         h5.card-header.info-color.white-text.text-center.py-4
+            strong Sign in
+         // Card content
+         .card-body.px-lg-5.pt-0
+            // Form
+            form(style='color: #757575;')(action = "/login", method = "POST")
+               // Email
+               .md-form
+                  label(for='materialLoginFormEmail') E-mail
+                  input#materialLoginFormEmail.form-control(name='email', type='email')
+               // Password
+               .md-form
+                  label(for='materialLoginFormPassword') Password
+                  input#materialLoginFormPassword.form-control(name='password',type='password')
+               .d-flex.justify-content-around
+                  div
+                     // Remember me
+                     .form-check
+                        input#materialLoginFormRemember.form-check-input(type='checkbox')
+                        label.form-check-label(for='materialLoginFormRemember') Remember me
+                  div
+                     // Forgot password
+                     a(href='') Forgot password?
+               // Sign in button
+               button.btn.btn-outline-info.btn-rounded.btn-block.my-4.waves-effect.z-depth-0(type='submit') Sign in
+               // Register
+               p
+                  | Not a member?
+                  a(href='signup') Register
+               // Social login
+               p or sign in with:
+               a.btn-floating.btn-fb.btn-sm(type='button')
+                  i.fa.fa-facebook(aria-hidden='true')
+               a.btn-floating.btn-tw.btn-sm(type='button')
+                  i.fa.fa-twitter(aria-hidden='true')
+               a.btn-floating.btn-li.btn-sm(type='button')
+                  i.fa.fa-linkedin(aria-hidden='true')
+               a.btn-floating.btn-git.btn-sm(type='button')
+                  i.fa.fa-github(aria-hidden='true')
+            // Form
+      // Material form login

@@ -1,0 +1,56 @@
+html
+html
+   head
+      title Form Tester
+      link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+      link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+      link(rel='stylesheet' href='css/style.css')
+   body
+      // Material form register
+      .card.col-md-6
+         h5.card-header.info-color.white-text.text-center.py-4
+            strong Sign up
+         // Card content
+         .card-body.px-lg-5.pt-0
+            // Form
+            form(style='color: #757575;')(action = "/signup", method = "POST")
+               .form-row
+                  .col
+                     // First name
+                     .md-form
+                        label(for='materialRegisterFormFirstName') Name
+                        input#materialRegisterFormFirstName.form-control(name='name', type='text')
+               // E-mail
+               .md-form.mt-0
+                  label(for='materialRegisterFormEmail') E-mail
+                  input#materialRegisterFormEmail.form-control(name='email', type='text')
+               // Password
+               .md-form
+                  label(for='materialRegisterFormPassword') Password
+                  input#materialRegisterFormPassword.form-control(name='password', type='password', aria-describedby='materialRegisterFormPasswordHelpBlock')
+               // Phone number
+               .md-form
+                  label(for='materialRegisterFormPhone') Phone number
+                  input#materialRegisterFormPhone.form-control(name='number', type='text', aria-describedby='materialRegisterFormPhoneHelpBlock')
+               // Sign up button
+               button.btn.btn-outline-info.btn-rounded.btn-block.my-4.waves-effect.z-depth-0(type='submit') Sign in
+               
+               // Social register
+               p or sign up with:
+               a.btn-floating.btn-fb.btn-sm(type='button')
+                  i.fa.fa-facebook-f
+               a.btn-floating.btn-tw.btn-sm(type='button')
+                  i.fa.fa-twitter
+               a.btn-floating.btn-li.btn-sm(type='button')
+                  i.fa.fa-linkedin
+               a.btn-floating.btn-git.btn-sm(type='button')
+                  i.fa.fa-github
+               hr
+               // Terms of service
+               p
+                  | By clicking
+                  em Sign up
+                  |  you agree to our
+                  a(href='', target='_blank') terms of service
+            // Form
+      // Material form register

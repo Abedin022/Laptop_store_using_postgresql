@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  # The application
+  pd-app:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/opt/app/src
+    environment:
+      - PORT=3000
+      - DATABASE=postgres://postgres:secret@pd-postgres:5432/pd
+    depends_on:
+      - pd-postgres
+  # Database server
+  pd-postgres:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=pd
+    logging:
+      driver: none
+  pd-adminer:
+    image: adminer
+    ports:
+      - 8080:8080
