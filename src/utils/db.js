@@ -10,6 +10,10 @@ const User = db.define('users', {
     type: Sequelize.TEXT,
     unique: true
   },
+  number: {
+    type: Sequelize.TEXT,
+    unique: true
+  },
   password: Sequelize.TEXT
 })
 

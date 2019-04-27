@@ -7,7 +7,6 @@ const { validate } = require('../utils/passwords')
 const { app_secret } = require('../config.json')
 const rejectInvalid = require('../middlewares/reject_invalid')
 const loginValidator = [check('email').isEmail(), check('password').isLength({ min: 5 })]
-var count = 0
 
 router.get('/login', function (req, res) {
   res.render('login_form')
@@ -16,31 +15,21 @@ router.get('/login', function (req, res) {
 router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
   let { password, email } = req.body
 
-  User.findAndCountAll({
+  let [uer, user] = await _p(User.findAndCountAll({
     where: {
       email
     }
-  }).then(result => {
-    if (result.count === 0) {
-      count = result.count
-      next(new Error('No Such User'))
-    }
-  })
+  }))
+  if (uer && !user) {
+    return next(uer)
+  } else {
+    if (user.count == 0) {
+      return next(new Error('No Such User'))
+    }else {
+      let { name, email, id } = user.rows[0]
 
-  if (count !== 0) {
-    let [uer, user] = await _p(User.findOne({
-      where: {
-        email
-      }
-    }))
-    if (uer && !user) {
-      console.log(uer)
-      // console.log(user)
-      return next(uer)
-    } else {
-      // console.log(user.password);
-      let [salt, hash] = user.password.split('.')
-      let { name, email, id } = user
+      let [salt, hash] = user.rows[0].password.split('.')
+
       let valid = validate(password, hash, salt)
       if (valid) {
         let token = jwt.sign({ id, name, email }, app_secret)
@@ -54,7 +43,7 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
           }
         })
       } else {
-        next(new Error('Password Invalid'))
+        return next(new Error('Password Invalid'))
       }
     }
   }
