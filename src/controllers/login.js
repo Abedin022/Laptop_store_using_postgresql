@@ -24,8 +24,9 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
     return next(uer)
   } else {
     if (user.count == 0) {
-      return next(new Error('No Such User'))
-    }else {
+      res.render('error_page', { title: 'edit blog', id: 404 })
+      // return next(new Error('No Such User'))
+    } else {
       let { name, email, id } = user.rows[0]
 
       let [salt, hash] = user.rows[0].password.split('.')
@@ -43,7 +44,8 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
           }
         })
       } else {
-        return next(new Error('Password Invalid'))
+        // res.render('/error')
+        res.render('error_page', { title: 'edit blog', id: 405 })
       }
     }
   }

@@ -1,0 +1,36 @@
+extends header
+
+block content
+    body
+        .container
+            .row
+                .col-md-12
+                .error-template
+                    h1
+                    | Oops!
+
+                    if ( id == 404)
+                        h2
+                        | Sorry! User Not Found
+                        .error-details
+                        | It seems that you are not registered!
+                        .error-actions
+                        a.btn.btn-primary.btn-lg(href='signup')
+                            span.glyphicon.glyphicon-home
+                            |                         Register
+                        a.btn.btn-info.btn-lg(href='#')
+                            span.glyphicon.glyphicon-envelope
+                            |  Contact Support
+                    
+                    else if ( id == 405)
+                        h2
+                        | Sorry! Wrong Password!!
+                        .error-details
+                        | Try Again
+                        .error-actions
+                        a.btn.btn-primary.btn-lg(href='login')
+                            span.glyphicon.glyphicon-home
+                            |                         Login
+                        a.btn.btn-info.btn-lg(href='#')
+                            span.glyphicon.glyphicon-envelope
+                            |  Contact Support
