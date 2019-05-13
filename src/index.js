@@ -18,8 +18,11 @@ app.use(signup)
 app.use(login)
 
 app.get('/', function (req, res) {
-  res.render('login_form')
+  res.render('home')
 })
+
+// setting public folder
+app.use(express.static(path.join(__dirname, '/public')));
 
 // view engine
 app.set('views', path.join(__dirname, 'views'))

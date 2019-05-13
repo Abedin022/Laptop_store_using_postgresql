@@ -1,0 +1,154 @@
+extends layout
+
+block content
+    body
+        nav.navbar.navbar-expand-lg.navbar-light
+            a.navbar-brand(href='#') Laptop Store
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+
+            button.btn.btn-light.btn-login(type='button') 
+                i.fas.fa-sign-in-alt(aria-hidden='true')  Sign In
+            button.btn.btn-light.btn-logout(type='button') 
+                i.fa.fa-book(aria-hidden='true')  Sign Up
+
+        h2 Filter Your Search
+        .col-md-3
+            form
+                .form-group
+                    h5 Price Range
+                    input.form-control(type='text' placeholder='from')
+                    br
+                    input.form-control(type='text' placeholder='to')
+                
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#brands' aria-expanded='false' aria-controls='collapseExample')
+                    | Brands 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #brands.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | HP
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | Dell
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='' disabled='')
+                            | Lenovo
+                    br
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#generation' aria-expanded='false' aria-controls='collapseExample')
+                    | Generation 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #generation.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 6th
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 7th
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 8th
+                    br
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#processors' aria-expanded='false' aria-controls='collapseExample')
+                    | Processors 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #processors.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | i3
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | i5
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | i7
+                    br
+                
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#rams' aria-expanded='false' aria-controls='collapseExample')
+                    | Rams 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #rams.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 4 GB
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 8 GB
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='' )
+                            | 16 GB
+                    br
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#storages' aria-expanded='false' aria-controls='collapseExample')
+                    | Storages 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #storages.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 256 GB SSD
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 512 GB SSD
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 512 GB HDD
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 1 TB HDD
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 1 TB HDD + 256 GB SSD
+                    
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 1 TB HDD + 512 GB SSD
+                    br
+                button.btn.btn-light(type='button' data-toggle='collapse' data-target='#screen' aria-expanded='false' aria-controls='collapseExample')
+                    | Screen Size 
+                    i.fa.fa-chevron-down
+                br
+                br
+                #screen.collapse
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 10 to 12
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 13 to 14
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox' value='')
+                            | 15 to 16
+
+                    br
+                
+                button.btn.btn-primary(type='submit') Filter

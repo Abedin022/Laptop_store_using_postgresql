@@ -1,0 +1,16 @@
+.navbar{
+  background-color: #2e353d;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .active>.nav-link{
+    color: beige;
+    margin-right: 5%;
+}
+
+.navbar-light .navbar-nav ul li{
+    margin-right: 5%;   
+}
+
+.btn-login{
+  margin-left: 65%;
+  margin-right: 2%;
+}

@@ -1,4 +1,4 @@
-extends header
+extends layout
 
 block content
     body
@@ -11,6 +11,7 @@ block content
 
                     if ( id == 404)
                         h2
+                        // #{id}
                         | Sorry! User Not Found
                         .error-details
                         | It seems that you are not registered!
@@ -24,6 +25,7 @@ block content
                     
                     else if ( id == 405)
                         h2
+                        // #{id}
                         | Sorry! Wrong Password!!
                         .error-details
                         | Try Again

@@ -24,7 +24,7 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
     return next(uer)
   } else {
     if (user.count == 0) {
-      res.render('error_page', { title: 'edit blog', id: 404 })
+      res.render('error_page', { id: 404 })
       // return next(new Error('No Such User'))
     } else {
       let { name, email, id } = user.rows[0]
@@ -34,8 +34,8 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
       let valid = validate(password, hash, salt)
       if (valid) {
         let token = jwt.sign({ id, name, email }, app_secret)
-        console.log('Login Successful')
-        res.render('success_login')
+        res.render('profile')
+        /*
         res.json({
           error: false,
           token,
@@ -43,6 +43,7 @@ router.post('/login', loginValidator, rejectInvalid, async (req, res, next) => {
             id, name, email
           }
         })
+        */
       } else {
         // res.render('/error')
         res.render('error_page', { title: 'edit blog', id: 405 })
