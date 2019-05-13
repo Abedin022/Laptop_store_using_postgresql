@@ -2,7 +2,7 @@ version: "3"
 
 services:
   # The application
-  pd-app:
+  ls-app:
     build: .
     ports:
       - 3000:3000
@@ -10,18 +10,18 @@ services:
       - ./src:/opt/app/src
     environment:
       - PORT=3000
-      - DATABASE=postgres://postgres:secret@pd-postgres:5432/pd
+      - DATABASE=postgres://postgres:secret@ls-postgres:5432/ls
     depends_on:
-      - pd-postgres
+      - ls-postgres
   # Database server
-  pd-postgres:
+  ls-postgres:
     image: postgres:10-alpine
     environment:
       - POSTGRES_PASSWORD=secret
-      - POSTGRES_DB=pd
+      - POSTGRES_DB=ls
     logging:
       driver: none
-  pd-adminer:
+  ls-adminer:
     image: adminer
     ports:
       - 8080:8080
