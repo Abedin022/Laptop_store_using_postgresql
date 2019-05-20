@@ -7,14 +7,14 @@ block content
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
 
-            button.btn.btn-light.btn-login(type='button') 
-                i.fas.fa-sign-in-alt(aria-hidden='true')  Sign In
-            button.btn.btn-light.btn-logout(type='button') 
-                i.fa.fa-book(aria-hidden='true')  Sign Up
+                button.btn.btn-light.btn-login(onclick="window.location.href = '/login';") 
+                    i.fas.fa-sign-in-alt(aria-hidden='true')  Sign In
+                button.btn.btn-light.btn-logout(onclick="window.location.href = '/signup';") 
+                    i.fa.fa-book(aria-hidden='true')  Sign Up
 
-        h2 Filter Your Search
-        .col-md-3
-            form
+        .col-md-3.filter_area
+            h2 Filter Your Search
+            form(method='POST', action='/filter')
                 .form-group
                     h5 Price Range
                     input.form-control(type='text' placeholder='from')
