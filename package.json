@@ -7,7 +7,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "nodemon": "^1.18.10",
     "path": "^0.12.7",
     "pg": "^7.7.1",
